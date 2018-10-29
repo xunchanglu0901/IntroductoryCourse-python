@@ -39,7 +39,7 @@
 ##### 　　画图的高级方法;同一张图上多项指标;多幅图展示在同一张画板上
 ###### fig = plt.figure()
 ###### ax = fig.add_subplot(4,2,1)#尺寸4*2 位置1
-##### 同一张图上多项指标
+##### 1)同一张图上多项指标
 ###### day1["High"].plot(label = 'High')
 ###### plt.legend()
 ###### plt.ylabel('Price')
@@ -48,7 +48,7 @@
 ###### plt.legend()
 ###### plt.ylabel('Price')
 ###### plt.show()
-##### 多幅图展示在同一张画板上
+##### 2)多幅图展示在同一张画板上
 ###### ax = fig.add_subplot(4,2,2)
 ###### day1["profit"]=day1["High"]-day1["Low"]
 ###### plt.bar(range(len(day1)),day1["profit"],label="profit")
