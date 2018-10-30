@@ -38,6 +38,10 @@
 ### lesson8
 #####     更改数据的时间格式;并且使用.dt.time和dt.date进行时间和日期的分割
 ###### 如将 2018-08-08 12：12：12 分割为 2018-08-08 和 12：12：12
+###### apple.index = pd.to_datetime(apple.index, format="%Y-%m-%d %H:%M:%S")
+###### apple["Date"] = apple.index.date
+###### apple["Time"] = apple.index.time
+###### 其中apple.index = apple["index"]
 ##### 　　画图的高级方法;同一张图上多项指标;多幅图展示在同一张画板上
 ###### fig = plt.figure()
 ###### ax = fig.add_subplot(4,2,1)#尺寸4*2 位置1
