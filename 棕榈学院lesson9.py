@@ -34,4 +34,4 @@ f = lambda x,y:x/y
 #print(f(day1["Volume"],day1["Volume_pct2"] ))
 day1["Volume_pct4"]=f(day1["Volume"],day1["Volume_pct2"] )
 
-apple.head()
+print(day1.head())
