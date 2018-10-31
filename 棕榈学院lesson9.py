@@ -24,13 +24,14 @@ day1["Volume"] = day1["Volume"].apply(pd.to_numeric, errors = 'coerce')
 #print(day1.head(10))#前几行,默认为5
 
 #作业三
-day1["Volume_pct1"] = day1["Volume"].pct_change()
 
-day1["Volume_pct2"] = day1["Volume"].shift(1)/day1["Volume"]
-
-day1["Volume_pct3"] =day1["Volume"].rolling(window=2).apply(lambda x:(x[1]-x[0])/x[0])
+day1['Volume_pct1'] = day1['Volume'].pct_change()
+day1['Volume_pct2'] = day1['Volume']/day1['Volume'].shift(1) - 1#shift是把该列元素向下平移一个单位,-1则为向上平移
+day1['Volume_pct3'] = day1.loc[:,['Volume']].apply(lambda x: x/x.shift(1) - 1)
+day1["Volume_pct3"] = day1["Volume"].rolling(window=2).apply(lambda x:(x[1]-x[0])/x[0])#window=2是对每两个格进行操作
 
 f = lambda x,y:x/y
 #print(f(day1["Volume"],day1["Volume_pct2"] ))
 day1["Volume_pct4"]=f(day1["Volume"],day1["Volume_pct2"] )
 
+apple.head()
